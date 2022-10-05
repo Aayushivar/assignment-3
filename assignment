@@ -1,0 +1,103 @@
+ASSIGNMENT-3
+WHAT IS r+,w+,a+
+CREATE A CALCULATOR WHERE THE VALUES AND OPERATERS NEED TO BE GIVEN BY THE USER AND STORE THE VALUES IN THE FILE:-
+
+r+: Read mode
+The r+ means reading the file .
+The read mode in python opens an exciting file for reading, positioning the pointer at the file's start it only allow to read the file which we have created.
+
+
+w: Write mode
+w+ means write and read the file.
+It opens a file for both writing and reading .
+If file exists,write truncates (clears) any existing information .
+
+a+: Append mode
+It adds ingormation to an existing file,placing the pointer at the end,if a file does not exist, append mode creates the file.
+
+myfile=open("myself.txt","r")
+print(myfile.read())
+this a new assignment 
+
+myfile=open("myself.txt","w")
+myfile.write("I m a student\n")
+14
+
+myfile=open("myself.txt","r")
+print(myfile.read())
+I m a student
+
+myfile=open("myself.txt","a")
+myfile.write("I like python")
+13
+
+myfile=open("myself.txt","r")
+print(myfile.read())
+I m a student
+I like python
+
+with open("myself.txt","w+") as file:
+    file.write("this a new assignment \n")
+myfile=open("myself.txt","r")
+print(myfile.read())
+this a new assignment 
+
+CALCULATOR
+# fuction adds two numbers 
+def add(x,y): 
+    return (x+y)
+# fuction subtracts two numbers 
+def subtract(x,y):
+    return (x-y)
+# fuction multipy two numbers 
+def multiply(x,y):
+    return (x*y)
+# fuction divides two numbers 
+def divide(x,y):
+    return (x/y)
+print("select operations.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+while True:
+    # input gives by user 
+    choice=input("enter choice(1/2/3/4):")
+    # check if choice is one of the four options
+    if choice in ('1','2','3','4'):
+        num1=float(input("enter first number:"))
+        num2=float(input("enter second number:"))
+    if choice=='1':
+        print(num1,"+",num2,"=",add(num1,num2))
+    elif choice=='2':
+        print(num1,"-",num2,"=",subtract(num1,num2))
+    elif choice=='3':
+        print(num1,"*",num2,"=",multiply(num1,num2))
+    elif choice=='4':
+        print(num1,"/",num2,"=",divide(num1,num2))
+    else:
+        print("invalid input")
+    # check if user wants another calclation
+    # break the while loop if answer is no
+    next_calculation =input("lets do next calculation?(yes/no)")
+    if next_calculation=="no":
+        break
+    else:
+        print("invalid input")
+select operations.
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+enter choice(1/2/3/4):4
+enter first number:8
+enter second number:5
+8.0 / 5.0 = 1.6
+lets do next calculation?(yes/no)yes
+invalid input
+enter choice(1/2/3/4):2
+enter first number:45
+enter second number:4
+45.0 - 4.0 = 41.0
+lets do next calculation?(yes/no)no
+​
